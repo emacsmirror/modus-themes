@@ -1,5 +1,5 @@
 #+title: Modus themes for GNU Emacs
-#+author: Protesilaos Stavrou
+#+author: Protesilaos
 #+email: info@protesilaos.com
 #+language: en
 #+options: ':t toc:nil author:t email:t num:t
@@ -15,13 +15,13 @@
 #+texinfo_dir_title: Modus Themes: (modus-themes)
 #+texinfo_dir_desc: Elegant, highly legible and customizable themes
 #+texinfo_header: @set MAINTAINERSITE @uref{https://protesilaos.com,maintainer webpage}
-#+texinfo_header: @set MAINTAINER Protesilaos Stavrou
+#+texinfo_header: @set MAINTAINER Protesilaos
 #+texinfo_header: @set MAINTAINEREMAIL @email{info@protesilaos.com}
 #+texinfo_header: @set MAINTAINERCONTACT @uref{mailto:info@protesilaos.com,contact the maintainer}
 
 #+texinfo: @insertcopying
 
-This manual, written by Protesilaos Stavrou, describes the
+This manual, written by Protesilaos, describes the
 customization options for the Modus themes, and provides every other
 piece of information pertinent to them.
 
@@ -2921,7 +2921,7 @@ palette such as by adapting these resources ([[#h:f4d4b71b-2ca5-4c3d-b0b4-9bfd7a
 #+begin_src emacs-lisp
 ! Theme: modus-operandi
 ! Description: XTerm port of modus-operandi (Modus themes for GNU Emacs)
-! Author: Protesilaos Stavrou, <https://protesilaos.com>
+! Author: Protesilaos, <https://protesilaos.com>
 xterm*background: #ffffff
 xterm*foreground: #000000
 xterm*color0:     #000000
@@ -2943,7 +2943,7 @@ xterm*color15:    #ffffff
 
 ! Theme: modus-vivendi
 ! Description: XTerm port of modus-vivendi (Modus themes for GNU Emacs)
-! Author: Protesilaos Stavrou, <https://protesilaos.com>
+! Author: Protesilaos, <https://protesilaos.com>
 xterm*background: #000000
 xterm*foreground: #ffffff
 xterm*color0:     #000000
@@ -6690,7 +6690,7 @@ GNU Emacs
 Even if that material is free software, we need to know about it.]
 
 Copied a few snippets from the same files I edited.  Their author,
-Protesilaos Stavrou, has already assigned copyright to the Free Software
+Protesilaos, has already assigned copyright to the Free Software
 Foundation.
 
 [Do you have an employer who might have a basis to claim to own
@@ -6725,7 +6725,7 @@ so far?]
 
 The Modus themes are a collective effort.  Every bit of work matters.
 
-+ Author/maintainer :: Protesilaos Stavrou.
++ Author/maintainer :: Protesilaos.
 
 + Contributions to code or documentation :: Aleksei Gusev, Alex
   Griffin, Anders Johansson, Antonio Ruiz, Basil L.{{{space()}}}

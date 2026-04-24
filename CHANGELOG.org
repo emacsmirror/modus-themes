@@ -1,5 +1,5 @@
 #+TITLE: Change log of the Modus Themes for GNU Emacs
-#+AUTHOR: Protesilaos Stavrou
+#+AUTHOR: Protesilaos
 #+EMAIL: info@protesilaos.com
 #+OPTIONS: ':nil toc:nil num:nil author:nil email:nil
 
@@ -3194,7 +3194,7 @@ users, while also catering to their aesthetic preferences.
 #+begin_src text
 Modus themes version 3.0.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-10-28
+By Protesilaos <info@protesilaos.com> on 2022-10-28
 
 
 The version that will ship with Emacs 29
@@ -3370,7 +3370,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 2.7.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-10-01
+By Protesilaos <info@protesilaos.com> on 2022-10-01
 
 
 Support for packages or faces
@@ -3547,7 +3547,7 @@ Changes to the manual
 #+begin_src text
 Modus themes version 2.6.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-08-19
+By Protesilaos <info@protesilaos.com> on 2022-08-19
 
 
 Changes to supported faces or face groups
@@ -3660,7 +3660,7 @@ Changes to the manual
 #+begin_src text
 Modus themes version 2.5.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-08-03
+By Protesilaos <info@protesilaos.com> on 2022-08-03
 
 This entry documents the changes made to the project since the
 publication of version 2.4.0 on 2022-06-01.  It spans more than 60
@@ -4087,7 +4087,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 2.4.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-06-01
+By Protesilaos <info@protesilaos.com> on 2022-06-01
 
 This entry documents the changes made to the project since the
 publication of version 2.3.0 on 2022-04-01.  It spans more than 60
@@ -4426,7 +4426,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 2.3.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-04-01
+By Protesilaos <info@protesilaos.com> on 2022-04-01
 
 This entry documents the changes made to the project since the
 publication of version 2.2.0 on 2022-02-23.  It spans more than 70
@@ -4492,7 +4492,7 @@ Attempted bug fix for byte compiled files
 Quoting from the git log:
 
     commit f067d2ef39c22174b95584f2cba7942aaf03bcca
-    Author: Protesilaos Stavrou <info@protesilaos.com>
+    Author: Protesilaos <info@protesilaos.com>
     Date:   Thu Mar 3 06:52:31 2022 +0200
 
         Reify themes with eval-and-compile
@@ -4726,7 +4726,7 @@ Thanks once again to everyone involved!
 #+begin_src text
 Modus themes version 2.2.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-02-23
+By Protesilaos <info@protesilaos.com> on 2022-02-23
 
 The present entry records the changes made to the project since the
 publication of version 2.1.0 on 2022-02-17.  This spans about 10 commits
@@ -4836,7 +4836,7 @@ Miscellaneous changes
 #+begin_src text
 Modus themes version 2.1.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2022-02-17
+By Protesilaos <info@protesilaos.com> on 2022-02-17
 
 The present entry records the changes made to the project since the
 publication of version 2.0.0 on 2021-12-24.  There have been more than
@@ -5545,7 +5545,7 @@ intense work which further iterated on an already solid base.
 #+begin_src text
 Modus themes version 2.0.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-12-24
+By Protesilaos <info@protesilaos.com> on 2021-12-24
 
 This entry covers the changes made to the project since the publication
 of version 1.7.0 on 2021-11-18.  There have been more than 90 commits in
@@ -5927,7 +5927,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 1.7.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-11-18
+By Protesilaos <info@protesilaos.com> on 2021-11-18
 
 The present entry records the changes made to the project since the
 release of version 1.6.0 on 2021-09-29.  There have been more than 60
@@ -6160,7 +6160,7 @@ Thanks once again to everyone involved!
 #+begin_src text
 Modus themes version 1.6.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-09-29
+By Protesilaos <info@protesilaos.com> on 2021-09-29
 
 This entry records the changes made to the project since the release of
 version 1.5.0 on 2021-07-15.  There have been around 70 commits since
@@ -6513,7 +6513,7 @@ themes, version 1.6.0, as part of the next stable release of Emacs.
 #+begin_src text
 Modus themes version 1.5.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-07-15
+By Protesilaos <info@protesilaos.com> on 2021-07-15
 
 This entry outlines the set of changes made to the project since the
 release of version 1.4.0 on 2021-05-25.  There have been over 130
@@ -6954,7 +6954,7 @@ Thanks again to everyone involved!
 #+begin_src text
 Modus themes version 1.4.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-05-25
+By Protesilaos <info@protesilaos.com> on 2021-05-25
 
 This entry records the changes made to the project since the release of
 version 1.3.0 on 2021-04-17.  There have been around 100 commits in the
@@ -7273,7 +7273,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 1.3.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-04-17
+By Protesilaos <info@protesilaos.com> on 2021-04-17
 
 This entry records the changes introduced to the project since the
 publication of version 1.2.0 (2021-03-04).  There have been around 100
@@ -7642,7 +7642,7 @@ Thanks once again to everyone involved!
 #+begin_src text
 Modus themes version 1.2.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-03-04
+By Protesilaos <info@protesilaos.com> on 2021-03-04
 
 This entry records the changes introduced to the project since the
 publication of version 1.1.0 (2021-01-24).  There have been close to 100
@@ -7995,7 +7995,7 @@ Miscellaneous
 #+begin_src text
 Modus themes version 1.1.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2021-01-24
+By Protesilaos <info@protesilaos.com> on 2021-01-24
 
 This entry records the changes introduced to the project since the
 publication of version 1.0.0 (2020-12-05).  There have been around 150
@@ -8456,7 +8456,7 @@ terms of face coverage, and (iv) meticulously designed throughout.
 #+begin_src text
 Modus themes version 1.0.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-12-05
+By Protesilaos <info@protesilaos.com> on 2020-12-05
 
 This entry documents the changes since version 0.13.0 (2020-10-08).
 They constitute a major release with backward-incompatible additions
@@ -8863,7 +8863,7 @@ it may have introduced.
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.13.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-10-08
+By Protesilaos <info@protesilaos.com> on 2020-10-08
 
 This entry documents the changes since version 0.12.0 (2020-08-26).
 There have been around 150 commits in the meantime, making this the
@@ -9394,7 +9394,7 @@ Thanks again to everyone who helped improve the themes!
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.12.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-08-26
+By Protesilaos <info@protesilaos.com> on 2020-08-26
 
 This entry documents the set of changes since version 0.11.0
 (2020-07-31).  There have been around 70 commits in the meatime, though
@@ -9698,7 +9698,7 @@ their thoughts.  The people already mentioned herein:
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.11.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-07-31
+By Protesilaos <info@protesilaos.com> on 2020-07-31
 
 This entry records the changes since version 0.10.0 (2020-06-24).  The
 present release covers close to 100 commits, some of which introduce
@@ -9962,7 +9962,7 @@ https://gitlab.com/protesilaos/modus-themes/-/issues
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.10.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-06-24
+By Protesilaos <info@protesilaos.com> on 2020-06-24
 
 This entry records the changes since version 0.9.0 (2020-06-03).  The
 present release is focused on stability and internal improvements.
@@ -10084,7 +10084,7 @@ My thanks to Basil and André for their contributions!
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.9.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-06-03
+By Protesilaos <info@protesilaos.com> on 2020-06-03
 
 This entry records the changes since version 0.8.0 (2020-04-28).  The
 present release contains about 50 commits, covering a month of active
@@ -10242,7 +10242,7 @@ Added support for
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.8.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-04-28
+By Protesilaos <info@protesilaos.com> on 2020-04-28
 
 This entry records the changes since version 0.7.0 (2020-03-30).  The
 present release contains a little more than a hundred commits, covering
@@ -10416,7 +10416,7 @@ Miscellaneous changes and concluding remarks
 #+begin_src text
 Modus Operandi and Modus Vivendi version 0.7.0
 
-By Protesilaos Stavrou <info@protesilaos.com> on 2020-03-30
+By Protesilaos <info@protesilaos.com> on 2020-03-30
 
 This entry documents the changes since version 0.6.0 (2020-03-01).  The
 present release is the largest to date containing 110 commits.

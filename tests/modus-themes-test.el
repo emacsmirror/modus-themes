@@ -2,9 +2,9 @@
 
 ;; Copyright (C) 2025-2026  Free Software Foundation, Inc.
 
-;; Author: Protesilaos Stavrou <info@protesilaos.com>,
+;; Author: Protesilaos <info@protesilaos.com>,
 ;;         Rudolf Adamkovič <rudolf@adamkovic.org>
-;; Maintainer: Protesilaos Stavrou <info@protesilaos.com>
+;; Maintainer: Protesilaos <info@protesilaos.com>
 ;; URL: https://github.com/protesilaos/modus-themes
 
 ;; This file is NOT part of GNU Emacs.
