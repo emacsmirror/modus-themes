@@ -6780,7 +6780,7 @@ The Modus themes are a collective effort.  Every bit of work matters.
   Tomasz Hołubowicz, Toon Claes, Troy Brown, Uri Sharf, Utkarsh Singh,
   Vincent Foley, Zoltan Kiraly. As well as users: Ben, CsBigDataHub1,
   Emacs Contrib, Eugene, Fourchaux, Fredrik, Moesasji, Nick, Summer
-  Emacs, TheBlob42, TitusMu, Trey, aikrahguzar, baconabo,
+  Emacs, TheBlob42, TitusMu, Trey, aikrahguzar, amano-kenji, baconabo,
   bangedorrunt, bepolymathe, bit9tream, case-lambda, chainedghost,
   derek-upham, doolio, fleimgruber, gitrj95, iSeeU, jixiuf, ltmsyvag,
   okamsn, pedro-nonfree, pRot0ta1p, realazy, shimeike, shipmints,

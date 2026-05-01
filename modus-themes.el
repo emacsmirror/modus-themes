@@ -3798,26 +3798,26 @@ Color values are of the form accepted by `modus-themes-wcag-formula'."
 (defun modus-themes--color-eight-to-six-digits (hex-color)
   "Reduce representation of hexadecimal RGB HEX-COLOR from eight to six digits.
 If HEX-COLOR is three or six digits, then return it as is."
-  (let ((color-no-hash (substring hex-color 1)))
-    (if (memq (length color-no-hash) '(3 6))
-        hex-color
-      (let* ((triplets (seq-split color-no-hash 4))
-             (triplets-shortened (mapcar
-                                  (lambda (string)
-                                    (substring string 0 2))
-                                  triplets)))
-        (concat "#" (string-join triplets-shortened))))))
+  (if (modus-themes--color-hex-p hex-color)
+      hex-color
+    (let* ((color-no-hash (substring hex-color 1))
+           (triplets (seq-split color-no-hash 4))
+           (triplets-shortened (mapcar
+                                (lambda (string)
+                                  (substring string 0 2))
+                                triplets)))
+      (concat "#" (string-join triplets-shortened)))))
 
-(defun modus-themes-adjust-value (hex-rgb percentage)
-  "Adjust value of HEX-RGB colour by PERCENTAGE."
-  (if-let* ((rgb (modus-themes--hex-to-rgb hex-rgb)))
-      (pcase-let* ((`(,r ,g ,b) rgb)
-                   (fn (if (color-dark-p (list r g b))
-                           #'color-lighten-name
-                         #'color-darken-name))
-                   (value (funcall fn hex-rgb percentage)))
-        (modus-themes--color-eight-to-six-digits value))
-    (error "The `%s' has to be a valid hexadecimal RGB color" hex-rgb)))
+(defun modus-themes-adjust-value (color percentage)
+  "Adjust value of COLOR by PERCENTAGE.
+COLOR is either a hexadecimal RGB string or a named color."
+  (when-let* ((rgb (modus-themes--hex-or-name-to-rgb color)))
+    (pcase-let* ((`(,r ,g ,b) rgb)
+                 (`(,h ,s ,l) (color-rgb-to-hsl r g b))
+                 (adjusted (color-lighten-hsl h s l percentage))
+                 (adjusted-rgb (apply #'color-hsl-to-rgb adjusted))
+                 (value (apply #'color-rgb-to-hex adjusted-rgb)))
+      (modus-themes--color-eight-to-six-digits value))))
 
 (defvar modus-themes-registered-items nil
   "List of defined themes.
