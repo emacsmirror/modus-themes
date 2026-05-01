@@ -60,6 +60,19 @@ Else provide a generic snippet of text."
   (should (equal (modus-themes--hex-to-rgb "#000000") (list 0.0 0.0 0.0)))
   (should (equal (modus-themes--hex-to-rgb "#ff0000") (list 1.0 0.0 0.0)))
   (should (equal (modus-themes--hex-to-rgb "#00ff00") (list 0.0 1.0 0.0)))
+(mtt-define-test modus-themes--color-hex-p
+  (should (modus-themes--color-hex-p "#123"))
+  (should (modus-themes--color-hex-p "#123456"))
+  (should (modus-themes--color-hex-p "#abc"))
+  (should (modus-themes--color-hex-p "#ABCDEF"))
+  (should-not (modus-themes--color-hex-p "abc"))
+  (should-not (modus-themes--color-hex-p "#abcd"))
+  (should-not (modus-themes--color-hex-p "#12345"))
+  (should-not (modus-themes--color-hex-p "#1234567"))
+  (should-not (modus-themes--color-hex-p "#zzz"))
+  (should-not (modus-themes--color-hex-p "#zzz"))
+  (should-not (modus-themes--color-hex-p "#12g456")))
+
   ;; NOTE 2026-04-12: I do not need it to be precise here, hence the `format'.
   (let ((rgb-rounded-fn
          (lambda (hex)
