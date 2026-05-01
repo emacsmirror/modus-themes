@@ -3774,10 +3774,11 @@ like those produced by `list-colors-display'."
          (/ channel 12.92)
        (expt (/ (+ channel 0.055) 1.055) 2.4))))
 
-(defun modus-themes-wcag-formula (hex-color)
-  "Get WCAG value of color value HEX-COLOR.
-The value is defined in hexadecimal RGB notation, such #123456."
-  (when-let* ((channels (modus-themes--hex-to-rgb hex-color)))
+(defun modus-themes-wcag-formula (color)
+  "Get WCAG value of color value COLOR.
+The value is defined in hexadecimal RGB notation, such #123456, or
+as a named color like those of `list-colors-display'."
+  (when-let* ((channels (modus-themes--hex-or-name-to-rgb color)))
     (let ((weights '(0.2126 0.7152 0.0722))
           (contribution nil))
       (while channels
@@ -3785,14 +3786,14 @@ The value is defined in hexadecimal RGB notation, such #123456."
       (apply #'+ contribution))))
 
 ;;;###autoload
-(defun modus-themes-contrast (hex-color-1 hex-color-2)
-  "Measure WCAG contrast ratio between HEX-COLOR-1 and HEX-COLOR-2.
-HEX-COLOR-1 and HEX-COLOR-2 are color values written in hexadecimal RGB."
-  (if-let* ((hex1-weight (modus-themes-wcag-formula hex-color-1))
-            (hex2-weight (modus-themes-wcag-formula hex-color-2)))
+(defun modus-themes-contrast (color-1 color-2)
+  "Measure WCAG contrast ratio between COLOR-1 and COLOR-2.
+Color values are of the form accepted by `modus-themes-wcag-formula'."
+  (if-let* ((hex1-weight (modus-themes-wcag-formula color-1))
+            (hex2-weight (modus-themes-wcag-formula color-2)))
       (let ((contrast (/ (+ hex1-weight 0.05) (+ hex2-weight 0.05))))
         (max contrast (/ contrast)))
-    (error "Both `%s' and `%s' must be valid hexadecimal RGB colors" hex-color-1 hex-color-2)))
+    (error "Both `%s' and `%s' must be valid hexadecimal RGB or named colors" color-1 color-2)))
 
 (defun modus-themes--color-eight-to-six-digits (hex-color)
   "Reduce representation of hexadecimal RGB HEX-COLOR from eight to six digits.
@@ -4261,15 +4262,15 @@ Run `modus-themes-after-load-theme-hook' after loading a theme."
 
 ;;;;; Preview a theme palette
 
-(defun modus-themes-color-dark-p (hex-color)
-  "Return non-nil if hexadecimal RGB HEX-COLOR is dark.
-Test that HEX-COLOR has more contrast against white than black."
-  (> (modus-themes-contrast hex-color "#ffffff")
-     (modus-themes-contrast hex-color "#000000")))
+(defun modus-themes-color-dark-p (color)
+  "Return non-nil if hexadecimal RGB COLOR is dark.
+Test that COLOR has more contrast against white than black."
+  (> (modus-themes-contrast color "#ffffff")
+     (modus-themes-contrast color "#000000")))
 
-(defun modus-themes-get-readable-foreground (hex-color)
-  "Get readable foreground for background hexadecimal RGB HEX-COLOR."
-  (if (modus-themes-color-dark-p hex-color)
+(defun modus-themes-get-readable-foreground (color)
+  "Get readable foreground for background hexadecimal RGB COLOR."
+  (if (modus-themes-color-dark-p color)
       "#ffffff"
     "#000000"))
 
@@ -7676,13 +7677,15 @@ For instance:
       (push (+ (* (nth i a) alpha) (* (nth i b) (- 1 alpha))) blend))
     (nreverse blend)))
 
-(defun modus-themes-generate-color-blend (hex-color blended-with-hex alpha)
-  "Return hexadecimal RGB of HEX-COLOR with BLENDED-WITH-HEX given ALPHA.
+(defun modus-themes-generate-color-blend (color blended-with-hex alpha)
+  "Return hexadecimal RGB of COLOR with BLENDED-WITH-HEX given ALPHA.
 BLENDED-WITH-HEX is commensurate with COLOR.  ALPHA is between 0.0 and 1.0,
-inclusive."
+inclusive.
+
+Color values are of the form accepted by `modus-themes-wcag-formula'."
   (let* ((blend-rgb (modus-themes-blend
-                     (modus-themes--hex-to-rgb hex-color)
-                     (modus-themes--hex-to-rgb blended-with-hex)
+                     (modus-themes--hex-or-name-to-rgb color)
+                     (modus-themes--hex-or-name-to-rgb blended-with-hex)
                      alpha))
          (blend-hex (apply #'color-rgb-to-hex blend-rgb)))
     (modus-themes--color-eight-to-six-digits blend-hex)))
@@ -7704,7 +7707,7 @@ inclusive."
   "Return non-nil if COLOR is warm.
 A warm color has more contribution from the red channel of light than
 the blue one."
-  (pcase-let ((`(,r ,_ ,b) (modus-themes--hex-to-rgb color)))
+  (pcase-let ((`(,r ,_ ,b) (modus-themes--hex-or-name-to-rgb color)))
     (> r b)))
 
 (defun modus-themes-color-is-warm-or-cool-p (color)
