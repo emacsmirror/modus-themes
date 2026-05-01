@@ -90,6 +90,17 @@ The manual has a section about building on top of Modus. My
   (modus-themes-load-theme 'modus-operandi))
 ```
 
+## Emacs themes based on Modus
+
+This is not an exhaustive list. You are welcome to add your package here.
+
+- `ef-themes` by Protesilaos <https://github.com/protesilaos/ef-themes>
+- `standard-themes` by Protesilaos <https://github.com/protesilaos/standard-themes>
+- `modus-ewal-theme` by Oliwier Czerwiński <https://github.com/deadendpl/modus-ewal-theme>
+- `modus-flexoki` by Derek Passen <https://github.com/dpassen/modus-flexoki>
+- `faff-theme` (since version 4) by James Ferguson <https://github.com/WJCFerguson/emacs-faff-theme>
+- `modus-catpuccin` by Magnus Therning <https://gitlab.com/magus/modus-catppuccin>
+
 ## Projects inspired by the Modus themes
 
 This is not an exhaustive list. You are welcome to add your project here.
