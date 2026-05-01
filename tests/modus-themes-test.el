@@ -95,7 +95,7 @@ Else provide a generic snippet of text."
 Also see `modus-themes-test--modus-themes--hex-to-rgb'."
   (should (= (modus-themes-wcag-formula "#ffffff") 1.0))
   (should (= (modus-themes-wcag-formula "#000000") 0.0))
-  (should-not (modus-themes-wcag-formula "#00000")))
+  (should-error (modus-themes-wcag-formula "#00000")))
 
 (mtt-define-test modus-themes-contrast
   "Test that `modus-themes-contrast' works as intended.
