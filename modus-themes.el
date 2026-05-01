@@ -3741,17 +3741,30 @@ Info node `(modus-themes) Option for palette overrides'.")
 
 ;;;; Helper functions for theme setup
 
-(defun modus-themes--hex-to-rgb (hex-color)
-  "Convert HEX-COLOR to a list of normalized RGB values.
-Use `color-values-from-color-spec' (a C built-in since Emacs 28.1)
-instead of `color-name-to-rgb' to avoid dependence on a display
-connection.  This matters when loading a theme during early init on
-GUI Emacs, where `color-values' returns nil before the display is
-ready (per <https://github.com/protesilaos/modus-themes/issues/198>)."
-  (mapcar
-   (lambda (x)
-     (/ x 65535.0))
-   (color-values-from-color-spec hex-color)))
+(defvar modus-themes--hex-regexp
+  (concat
+   "\\`#"
+   "\\(?:[[:xdigit:]]\\{3\\}"
+   "\\|"
+   "[[:xdigit:]]\\{6\\}\\)"
+   "\\'")
+  "Regular expression to match a color in hexadecimal RGB notation.")
+
+(defun modus-themes--color-hex-p (color)
+  "Return non-nil if COLOR is hexadecimal RGB."
+  (and (stringp color) (string-match-p modus-themes--hex-regexp color)))
+
+(defun modus-themes--hex-or-name-to-rgb (color)
+  "Convert COLOR to a list of normalized RGB values.
+COLOR can be a hexadecimal RGB value like #123456 or a named color
+like those produced by `list-colors-display'."
+  (cond
+   ((modus-themes--color-hex-p color)
+    (when-let* ((spec (color-values-from-color-spec color)))
+      (mapcar (lambda (x) (/ x 65535.0)) spec)))
+   ((color-name-to-rgb color))
+   (t
+    (error "The color `%s' cannot be resolved" color))))
 
 ;; This is the WCAG formula: https://www.w3.org/TR/WCAG20-TECHS/G18.html
 (defun modus-themes--wcag-contribution (channel weight)
