@@ -50,16 +50,6 @@ Else provide a generic snippet of text."
        ,docstring
        ,@body)))
 
-(mtt-define-test modus-themes--hex-to-rgb
-  (should (equal (modus-themes--hex-to-rgb "#fff") (list 1.0 1.0 1.0)))
-  (should (equal (modus-themes--hex-to-rgb "#000") (list 0.0 0.0 0.0)))
-  (should (equal (modus-themes--hex-to-rgb "#f00") (list 1.0 0.0 0.0)))
-  (should (equal (modus-themes--hex-to-rgb "#0f0") (list 0.0 1.0 0.0)))
-  (should (equal (modus-themes--hex-to-rgb "#00f") (list 0.0 0.0 1.0)))
-  (should (equal (modus-themes--hex-to-rgb "#ffffff") (list 1.0 1.0 1.0)))
-  (should (equal (modus-themes--hex-to-rgb "#000000") (list 0.0 0.0 0.0)))
-  (should (equal (modus-themes--hex-to-rgb "#ff0000") (list 1.0 0.0 0.0)))
-  (should (equal (modus-themes--hex-to-rgb "#00ff00") (list 0.0 1.0 0.0)))
 (mtt-define-test modus-themes--color-hex-p
   (should (modus-themes--color-hex-p "#123"))
   (should (modus-themes--color-hex-p "#123456"))
@@ -73,22 +63,32 @@ Else provide a generic snippet of text."
   (should-not (modus-themes--color-hex-p "#zzz"))
   (should-not (modus-themes--color-hex-p "#12g456")))
 
+(mtt-define-test modus-themes--hex-or-name-to-rgb
+  (should (equal (modus-themes--hex-or-name-to-rgb "#fff") (list 1.0 1.0 1.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#000") (list 0.0 0.0 0.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#f00") (list 1.0 0.0 0.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#0f0") (list 0.0 1.0 0.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#00f") (list 0.0 0.0 1.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#ffffff") (list 1.0 1.0 1.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#000000") (list 0.0 0.0 0.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#ff0000") (list 1.0 0.0 0.0)))
+  (should (equal (modus-themes--hex-or-name-to-rgb "#00ff00") (list 0.0 1.0 0.0)))
   ;; NOTE 2026-04-12: I do not need it to be precise here, hence the `format'.
   (let ((rgb-rounded-fn
          (lambda (hex)
-           (let ((rgb (modus-themes--hex-to-rgb hex)))
+           (let ((rgb (modus-themes--hex-or-name-to-rgb hex)))
              (mapcar (lambda (float) (string-to-number (format "%.2f" float))) rgb)))))
     (should (equal (funcall rgb-rounded-fn "#800000") (list 0.5 0.0 0.0)))
     (should (equal (funcall rgb-rounded-fn "#008000") (list 0.0 0.5 0.0)))
     (should (equal (funcall rgb-rounded-fn "#000080") (list 0.0 0.0 0.5))))
-  (should-not (modus-themes--hex-to-rgb ""))
-  (should-not (modus-themes--hex-to-rgb "#"))
-  (should-not (modus-themes--hex-to-rgb "#1"))
-  (should-not (modus-themes--hex-to-rgb "#12"))
-  (should-not (modus-themes--hex-to-rgb "#1234"))
-  (should-not (modus-themes--hex-to-rgb "#12345"))
-  (should-not (modus-themes--hex-to-rgb "#gggggg"))
-  (should-error (modus-themes--hex-to-rgb (list 1.0 1.0 1.0))))
+  (should-error (modus-themes--hex-or-name-to-rgb ""))
+  (should-error (modus-themes--hex-or-name-to-rgb "#"))
+  (should-error (modus-themes--hex-or-name-to-rgb "#1"))
+  (should-error (modus-themes--hex-or-name-to-rgb "#12"))
+  (should-error (modus-themes--hex-or-name-to-rgb "#1234"))
+  (should-error (modus-themes--hex-or-name-to-rgb "#12345"))
+  (should-error (modus-themes--hex-or-name-to-rgb "#gggggg"))
+  (should-error (modus-themes--hex-or-name-to-rgb (list 1.0 1.0 1.0))))
 
 (mtt-define-test modus-themes-wcag-formula
   "Test that `modus-themes-wcag-formula' does the right thing.
